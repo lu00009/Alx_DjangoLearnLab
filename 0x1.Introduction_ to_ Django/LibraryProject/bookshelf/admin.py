@@ -2,8 +2,6 @@ from django.contrib import admin
 
 # Register your models here.
 from .models import Book
-from django.contrib import admin
-
 class BookAdmin(admin.ModelAdmin):
     # Specify the fields to display in the admin list view
     list_display = ('title', 'author', 'publication_year')
