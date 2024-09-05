@@ -2,6 +2,7 @@ from django.shortcuts import render
 # Create your views here.
 from .models import Book
 from django.views.generic import DetailView
+from .models import Library
 def book_list(request):
       books = Book.objects.all()  # Fetch all book instances from the database
       context = {'list_books': books}  # Create a context dictionary with book list
