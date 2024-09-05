@@ -4,14 +4,14 @@ from .models import Book
 from django.views.generic import DetailView
 def book_list(request):
       books = Book.objects.all()  # Fetch all book instances from the database
-      context = {'book_list': books}  # Create a context dictionary with book list
-      return render(request, 'books/book_list.html', context)
+      context = {'list_books': books}  # Create a context dictionary with book list
+      return render(request, 'relationship_app/list_books.html', context)
 
 
 
-class BookDetailView(DetailView):
+class LibraryDetailView(DetailView):
   model = Book
-  template_name = 'books/book_detail.html'
+  template_name = 'relationship_app/library_detail.html'
 
   def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)  # Get default context data
